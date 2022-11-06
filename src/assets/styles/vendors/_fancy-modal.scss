@@ -1,0 +1,184 @@
+.fancybox-container {
+  button[disabled] {
+    display: none;
+  }
+}
+
+.fancybox-bg {
+  background: rgba(30, 30, 30, 0.78%);
+}
+
+.fancybox-slide {
+  //padding: 0;
+  .animated-modal {
+    //height: 100%;
+    //max-width: 100%;
+    overflow: hidden;
+    background: #fff;
+    transform: translateY(-80px);
+    transition: all 0.5s;
+  }
+  &--current {
+    .animated-modal {
+      transform: translateY(0);
+      opacity: 1;
+      transition-duration: 0.3s;
+      //width: 100%;
+      //div, h3, p {
+      //  transform: translateY(0);
+      //  opacity: 1;
+      //}
+    }
+  }
+}
+
+.fancy-modal {
+  box-shadow: 0px 19px 40px rgba(35, 78, 98, 0.2);
+  max-width: 845px;
+  width: 100%;
+  padding: 70px 140px 60px;
+  &__wrap {
+  }
+  .fancybox-close-small {
+    display: none;
+  }
+  &__close {
+    z-index: 20;
+    transition: transform 0.3s ease-in-out;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    top: 0px;
+    right: 0px;
+    span,
+    &:before,
+    &:after {
+      content: "";
+      height: 2px;
+      width: 35px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #25282b;
+      will-change: margin, transform;
+      transform: translate(-50%, -50%);
+      border-radius: 1px;
+      transition: 0.2s ease-in-out background-color;
+    }
+    &:before {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      margin-top: 0;
+    }
+    &:after {
+      transform: translate(-50%, -50%) rotate(45deg);
+      margin-top: 0;
+    }
+    &:hover {
+      transform: scale(1.1);
+      span,
+      &:before,
+      &:after {
+        background-color: $color-base-hover;
+      }
+    }
+  }
+  &__title {
+    font-weight: bold;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.2;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"] {
+      border-bottom: 2px solid #1ea6e3;
+      font-weight: normal;
+      font-size: 16px;
+      width: 100%;
+      padding: 6px 0;
+      background: transparent;
+    }
+    input[type="submit"],
+    button {
+      margin-top: 10px;
+      width: 260px;
+      height: 62px;
+      background: $color-base;
+      border-radius: 44px;
+      font-weight: 500;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      transition: 0.2s ease-in-out background, 0.2s ease-in-out color;
+      margin-bottom: 18px;
+      &:hover {
+        background: $color-base-hover;
+      }
+    }
+    .wpcf7-response-output {
+      font-size: 14px !important;
+    }
+  }
+  &__personal-data {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    font-size: 12px;
+    line-height: 1.2;
+    text-align: center;
+    color: #1f374d;
+    opacity: 0.9;
+    a {
+      color: #1f374d;
+    }
+  }
+}
+
+@media (max-width: $lg) {
+  .fancy-modal {
+    padding: 70px 60px 60px;
+  }
+}
+
+@media (max-width: $md) {
+  .fancy-modal {
+    padding: 60px 40px 40px;
+    &__title {
+      font-size: 26px;
+    }
+    form {
+      .wpcf7-response-output {
+        font-size: 12px !important;
+      }
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"] {
+        font-size: 14px;
+      }
+      input[type="submit"],
+      button {
+        width: 240px;
+        height: 52px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: $sm) {
+  .fancy-modal {
+    padding: 60px 15px 40px;
+  }
+}

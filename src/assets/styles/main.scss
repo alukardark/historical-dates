@@ -1,0 +1,22 @@
+// 1. Configuration and helpers
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/animations";
+
+// 2. Vendors
+@import "~normalize.scss";
+@import "~swiper/scss";
+
+// 3. Base stuff
+@import "base/base";
+@import "base/fonts";
+@import "base/typography";
+@import "base/helpers";
+@import "base/container";
+
+// 4. Layout-related sections
+@import "layout/historical-dates";
+
+// 5. Components
+@import "components/swiper-pagination";

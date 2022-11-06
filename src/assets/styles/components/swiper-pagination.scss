@@ -1,0 +1,32 @@
+.swiper-pagination {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+    background: $color-text;
+    opacity: 0.4;
+    margin: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s ease-in-out opacity;
+    &.swiper-pagination-bullet-active, &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: $md) {
+  .swiper-pagination {
+    display: flex;
+    width: calc(100% - 120px);
+    padding-left: 120px;
+  }
+}
+@media (max-width: $sm) {
+  .swiper-pagination {
+    width: calc(100% - 58px);
+    padding-left: 58px;
+  }
+}
